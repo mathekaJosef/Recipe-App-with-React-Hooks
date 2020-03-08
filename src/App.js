@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import Recipe from './components/Recipe'
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+import { Container, Row, Col} from 'reactstrap'
 
 const App = () => {
   const APP_ID = "8860c87c"
@@ -36,6 +38,7 @@ const App = () => {
   return (
     <div className="App" style={{margin: 10}}>
       <form onSubmit={getSearch} className="search-form">
+        
         <input 
           className="search-bar" 
           type="text"
@@ -49,13 +52,13 @@ const App = () => {
 
       <div className="recipes">
         {recipes.map((recipe, index) => (
-          <Recipe
-            key={index}
-            title={recipe.recipe.label}
-            calories={recipe.recipe.calories}
-            image={recipe.recipe.image}
-            ingredients={recipe.recipe.ingredients}
-          />
+            <Recipe
+              key={index}
+              title={recipe.recipe.label}
+              calories={recipe.recipe.calories}
+              image={recipe.recipe.image}
+              ingredients={recipe.recipe.ingredients}
+            />
         ))}
       </div>
     </div>
