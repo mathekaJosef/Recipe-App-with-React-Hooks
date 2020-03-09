@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import Recipe from './components/Recipe'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
-import { Container, Row, Col} from 'reactstrap'
+import {Row} from 'reactstrap'
 
 const App = () => {
   const APP_ID = "8860c87c"
@@ -50,17 +51,17 @@ const App = () => {
         </button>
       </form>
 
-      <div className="recipes">
+      <Row>
         {recipes.map((recipe, index) => (
-            <Recipe
-              key={index}
-              title={recipe.recipe.label}
-              calories={recipe.recipe.calories}
-              image={recipe.recipe.image}
-              ingredients={recipe.recipe.ingredients}
-            />
+          <Recipe
+            key={index}
+            title={recipe.recipe.label}
+            calories={recipe.recipe.calories}
+            image={recipe.recipe.image}
+            ingredients={recipe.recipe.ingredients}
+          />
         ))}
-      </div>
+      </Row>
     </div>
   );
 }

@@ -1,25 +1,23 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row, Col} from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.css'
+import {Col, Card, CardBody, CardSubtitle, CardImg, CardTitle, CardText} from 'reactstrap';
 
 function Recipe({title, calories, image, ingredients}) {
     return (
-        <Container>
-            <Row>
-              <Col xs="4">
-                <h1>{title}</h1>
-                <p>{calories}</p>
-                <img src={image} alt=""/>
-                <ol style={{listStyle: "none"}}>
-                    {
-                        ingredients.map((item, index) => (
-                            <li key={index}>{item.text}</li>
-                        ))
-                    }
-                </ol>
-              </Col>
-            </Row>
-          </Container>
+
+        <Col sm="3">
+          <Card>
+            <CardImg top width="100%" src={image} alt="Card image cap" />
+            <CardBody>
+              <CardTitle>{title}</CardTitle>
+              <CardSubtitle>{calories}</CardSubtitle>
+              <CardText>
+                
+              </CardText>
+            </CardBody>
+          </Card>
+        </Col>
     )
 }
 
