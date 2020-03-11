@@ -9,20 +9,67 @@
   align-items: center;
 }
 
-.search-bar{
-  border:1px solid #f0f0f0;
-  width: 40%;
-  padding: 2px;
-  float: center;
+.card-recipe{
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(153, 153, 153, 0.1);
+  box-shadow: 0px 10px 20px 0px rgba(153, 153, 153, 0.1);
+  padding: 30px;
+  border: none;
 }
 
-.search-button{
-  background: #f0f0f0;
-  border: none;
-  padding: 3px 15px;
-  color: #000;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+.input-group .form-control {
+  width: 40%;
+  font-size: 14px;
+  line-height: 29px;
+  border: 1px solid #eeeeee;
+  font-weight: 300;
+  color: #777777;
+  padding-left: 20px;
+  border-radius: 45px;
+  z-index: 0;
+  background: transparent;
+}
+
+.input-group .form-control.placeholder {
+  color: #777777;
+  font-weight: normal;
+}
+
+.input-group .form-control:-moz-placeholder {
+  color: #777777;
+  font-weight: normal;
+}
+
+.input-group .form-control::-moz-placeholder {
+  color: #777777;
+  font-weight: normal;
+}
+
+.input-group .form-control::-webkit-input-placeholder {
+  color: #777777;
+  font-weight: normal;
+}
+
+.input-group .form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.input-group .btn-default {
+  position: absolute;
+  right: 20px;
+  background: transparent;
+  border: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-size: 14px;
+  color: #777777;
+  font-weight: 700;
+  padding: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 /* .recipes{

@@ -3,7 +3,8 @@ import Recipe from './components/Recipe'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
-import {Row} from 'reactstrap'
+import {Row, Col} from 'reactstrap'
+import { FaSearch } from 'react-icons/fa';
 
 const App = () => {
   const APP_ID = "8860c87c"
@@ -39,28 +40,40 @@ const App = () => {
   return (
     <div className="App" style={{margin: 10}}>
       <form onSubmit={getSearch} className="search-form">
-        
-        <input 
-          className="search-bar" 
-          type="text"
-          value={search}
-          onChange={updateSearch}
-        />
-        <button className="search-button" type="submit">
-          Search
-        </button>
+
+        <div className="input-group" style={{width: "40%"}}>
+            <input 
+              type="text" 
+              className="form-control border-light bg-muted" 
+              placeholder="Search Posts"
+              value={search}
+              onChange={updateSearch}
+              style={{borderRadius: "45px"}}
+            />
+            <span className="input-group-btn">
+                <button type="submit" className="btn btn-default"><FaSearch/></button>
+            </span>
+        </div>
+
+
       </form>
 
       <Row>
-        {recipes.map((recipe, index) => (
-          <Recipe
-            key={index}
-            title={recipe.recipe.label}
-            calories={recipe.recipe.calories}
-            image={recipe.recipe.image}
-            ingredients={recipe.recipe.ingredients}
-          />
-        ))}
+        <Col sm="2"></Col>
+        <Col sm="8">
+          <Row>
+            {recipes.map((recipe, index) => (
+              <Recipe
+                key={index}
+                title={recipe.recipe.label}
+                calories={recipe.recipe.calories}
+                image={recipe.recipe.image}
+                ingredients={recipe.recipe.ingredients}
+              />
+            ))}
+          </Row>
+        </Col>
+        <Col sm="2"></Col>
       </Row>
     </div>
   );
