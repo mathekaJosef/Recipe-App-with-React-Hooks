@@ -41,7 +41,7 @@ const App = () => {
     <div className="App" style={{margin: 10}}>
       <form onSubmit={getSearch} className="search-form">
 
-        <div className="input-group" style={{width: "40%"}}>
+        <div className="input-group">
             <input 
               type="text" 
               className="form-control border-light bg-muted" 

@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto:300,400,500,700");
+body{
+  overflow-x: hidden;
+}
 .App{
   min-height: 100vh;
 }
@@ -16,6 +20,33 @@
   border: none;
 }
 
+#go-recipe:hover{
+  color: #ff2f92;
+  transition: .5s;
+  font-size: 14px;
+}
+
+.card-title{
+  font-size: 13px;
+  line-height: 20px;
+  color: #222222;
+  margin-bottom: 4px;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.card-title:hover{
+  color: #ff2f92;
+}
+
+.card-calories{
+  font-size: 11px;
+  line-height: 21px;
+  margin-bottom: 0px;
+  color: #ff2f92;
+}
+
 .input-group .form-control {
   width: 40%;
   font-size: 14px;
@@ -27,6 +58,16 @@
   border-radius: 45px;
   z-index: 0;
   background: transparent;
+}
+
+.input-group{
+  width: 40%;
+}
+
+@media (max-width: 600px) {
+  .input-group{
+    width: 100%;
+  }
 }
 
 .input-group .form-control.placeholder {
