@@ -29,11 +29,13 @@ function Recipe({title, calories, image, ingredients}) {
                 <ModalHeader toggle={toggle}>{title}</ModalHeader>
                 <ModalBody>
                   <ul>
-                    <li>{ingredients}</li>
+                    {ingredients.map(ingredient => {
+                      return <li>{ingredient.text}</li>
+                    })}
                   </ul>
                 </ModalBody>
                 <ModalFooter>
-                  <Button color="secondary" onClick={toggle}>Cancel</Button>
+                  <Button color="secondary" size="sm" style={{background: "#ff2f92"}} onClick={toggle}>Exit</Button>
                 </ModalFooter>
               </Modal>
 
