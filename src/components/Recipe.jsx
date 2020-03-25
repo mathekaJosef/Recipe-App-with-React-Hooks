@@ -18,8 +18,8 @@ function Recipe({title, calories, image, ingredients}) {
   const card_calories = calories.toFixed(4)
   
     return (
-        <Col sm="3" style={{marginBottom: "15px"}} className="hvrbox">
-          <Card className="card-recipe hvrbox-layer_bottom">
+        <Col sm="3" style={{marginBottom: "15px"}}>
+          <Card className="card-recipe hvrbox">
             <CardImg top width="100%" src={image} alt="Card image cap" />
             <CardBody>
               <CardTitle className="card-title"><b>{card_title}...</b></CardTitle>
@@ -41,12 +41,18 @@ function Recipe({title, calories, image, ingredients}) {
               </Modal>
 
             </CardBody>
+
+            <div className="hvrbox-layer_top hvrbox-layer_slideright">
+              <div className="hvrbox-text">
+                <ul>
+                  {ingredients.slice(0, 4).map(ingredient => {
+                    return <li>{ingredient.text}</li>
+                  })}
+                </ul>
+              </div>
+            </div>
+
           </Card>
-
-          <div className="hvrbox-layer_top hvrbox-layer_slideright">
-            <div className="hvrbox-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porttitor ligula porttitor, lacinia sapien non.</div>
-          </div>
-
         </Col>
     )
 }
