@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../App.css'
+import '../hover-box.css'
 import {Col, Card, CardBody, CardSubtitle, CardImg, CardTitle, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 
@@ -17,8 +18,8 @@ function Recipe({title, calories, image, ingredients}) {
   const card_calories = calories.toFixed(4)
   
     return (
-        <Col sm="3" style={{marginBottom: "15px"}}>
-          <Card className="card-recipe">
+        <Col sm="3" style={{marginBottom: "15px"}} className="hvrbox">
+          <Card className="card-recipe hvrbox-layer_bottom">
             <CardImg top width="100%" src={image} alt="Card image cap" />
             <CardBody>
               <CardTitle className="card-title"><b>{card_title}...</b></CardTitle>
@@ -41,6 +42,11 @@ function Recipe({title, calories, image, ingredients}) {
 
             </CardBody>
           </Card>
+
+          <div className="hvrbox-layer_top hvrbox-layer_slideright">
+            <div className="hvrbox-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porttitor ligula porttitor, lacinia sapien non.</div>
+          </div>
+
         </Col>
     )
 }
