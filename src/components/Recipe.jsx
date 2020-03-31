@@ -45,7 +45,7 @@ function Recipe({title, calories, image, ingredients}) {
             <div className="hvrbox-layer_top hvrbox-layer_slideright">
               <div className="hvrbox-text">
                 <ul>
-                  {ingredients.slice(0, 4).map(ingredient => {
+                  {ingredients.slice(0, 4).map(ingredient => { 
                     return <li>{ingredient.text}</li>
                   })}
                 </ul>
