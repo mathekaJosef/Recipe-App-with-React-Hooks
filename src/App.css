@@ -21,7 +21,7 @@ body{
 }
 
 #go-recipe:hover{
-  color: #ff2f92;
+  color: #000;
   transition: .5s;
   font-size: 14px;
 }

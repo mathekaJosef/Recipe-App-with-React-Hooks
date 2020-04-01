@@ -24,31 +24,32 @@ function Recipe({title, calories, image, ingredients}) {
             <CardBody>
               <CardTitle className="card-title"><b>{card_title}...</b></CardTitle>
               <CardSubtitle className="card-calories">{card_calories}</CardSubtitle>
-              <small id="go-recipe" style={{fontSize: "10px", cursor: "pointer"}} onClick={toggle}>Recipe <FaLongArrowAltRight/></small>
-
-              <Modal isOpen={modal} toggle={toggle} style={{border: "none"}}>
-                <ModalHeader toggle={toggle}>{title}</ModalHeader>
-                <ModalBody>
-                  <ul>
-                    {ingredients.map(ingredient => {
-                      return <li>{ingredient.text}</li>
-                    })}
-                  </ul>
-                </ModalBody>
-                <ModalFooter>
-                  <Button color="secondary" size="sm" style={{background: "#ff2f92"}} onClick={toggle}>Exit</Button>
-                </ModalFooter>
-              </Modal>
-
             </CardBody>
 
             <div className="hvrbox-layer_top hvrbox-layer_slideright">
               <div className="hvrbox-text">
                 <ul>
-                  {ingredients.slice(0, 4).map(ingredient => { 
+                  {ingredients.slice(0, 3).map(ingredient => { 
                     return <li>{ingredient.text}</li>
                   })}
+                  <br/>
+                  <small id="go-recipe" style={{fontSize: "12px", cursor: "pointer"}} onClick={toggle}><FaLongArrowAltRight/> Read More</small>
+
+                  <Modal isOpen={modal} toggle={toggle} style={{border: "none"}}>
+                    <ModalHeader toggle={toggle}>{title}</ModalHeader>
+                    <ModalBody>
+                      <ul>
+                        {ingredients.map(ingredient => {
+                          return <li>{ingredient.text}</li>
+                        })}
+                      </ul>
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button color="secondary" size="sm" style={{background: "#ff2f92"}} onClick={toggle}>Exit</Button>
+                    </ModalFooter>
+                  </Modal>
                 </ul>
+                
               </div>
             </div>
 
